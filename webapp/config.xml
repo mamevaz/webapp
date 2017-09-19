@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <widget xmlns       = "http://www.w3.org/ns/widgets"
         xmlns:gap   = "http://phonegap.com/ns/1.0"
-        id          = "es.endel.prueba"
+        id          = "es.informaticamvm.prueba"
         versionCode = "1"
-        version     = "1.0" >
+        version     = "0.1" >
 
-	<name>prueba</name>
+	<name>informatica mvm</name>
 
-	<description>prueba de wordpress a app</description>
+	<description>app de prueba</description>
 
-	<author href="" email="">marco</author>
+	<author href="" email="">kako</author>
 
 	<gap:platform name="android" />
 	
