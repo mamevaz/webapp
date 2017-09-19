@@ -5,9 +5,23 @@
 <!--
  * Menu is enclosed in <div id="app-menu"></div>
 -->
-<%= menu %>
-
-<div id="app-canvas">
+<%= //menu %>
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="navbar-header" >
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <span class="navbar-brand"><a href="#"><%= app_title %></a></span>
+    </div>
+    <div class="collapse navbar-collapse" id="navbar-collapse">
+        <%= menu %>
+    </div>
+</nav>
+<div class="container" style="padding-top: 45px;"><%= content %></div>
+<!--<div id="app-canvas">
 
     <div id="app-header" class="app-header has-ripple-feedback ripple-small">
         <div id="menu-button" class="menu-button"></div>
@@ -20,7 +34,7 @@
     <!--
      * Content is enclosed in <div id="app-content-wrapper"><div class="app-screen"></div></div>
     -->
-    <%= content %>
+    <!--<%= //content %>
             
     <div id="slideup-panel" class="slideup-panel">
         <div id="panel-header" class="panel-header has-ripple-feedback ripple-small">
@@ -31,4 +45,4 @@
         <div id="panel-content" class="panel-content"></div>
     </div>
     
-</div>
+</div>-->

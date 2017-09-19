@@ -1,48 +1,24 @@
-<!--
- * Content is enclosed in <div id="app-content-wrapper"><div id="app-screen"></div></div>
- * Subhead: is added by add-custom-data.php in the theme's php folder / It expects that the post has a subhead custom field
- * Handler for image loading error: displayDefaultImage() added in functions.js as a template's parameter
--->
-
-<div id="content" class="content list-template">
+<h1><%= list_title %></h1>
     
-	<% if(posts.length){ %>
+<% if(posts.length){ %>
 
-		<% _.each( posts, function( post ){ %>
-
-			<div class="content-item has-ripple-feedback">
-
-                <a href="<%= TemplateTags.getPostLink(post.id) %>">
-
-                    <% if ( post.subhead ) { %>
-
-                        <div class="subhead"><%= post.subhead %></div>
-
-                    <% } %>
-
-					<h2><span><%= post.title %></span></h2>
-                        
-                    <% if(  post.thumbnail && post.thumbnail.src && post.thumbnail.src.length ){ %>
-
-                        <img class="content-thumbnail" src="<%= post.thumbnail.src %>" onerror="displayDefaultImage(this);" />
-
-                    <% } %>	
-                    
-                        
-				</a>
-			</div>
-
-		<% }); %>
-
-        <% if( TemplateTags.displayGetMoreLink() ){ %>
-			<div class="get-more-button-wrapper">
-                <button type="button" id="get-more-button" class="get-more-button has-ripple-feedback ripple-small">More (<%= TemplateTags.getMoreLinkNbLeft() %>)</button>
-            
+    <ul class="media-list">
+        <% _.each( posts, function( post ){ %>
+            <div class="media">
+                <% if( post.thumbnail.src && post.thumbnail.src.length ){ %>
+                    <img class="media-object pull-left" src="<%= post.thumbnail.src %>" style="width: 87px; height: 58px;">
+                <% } %>	
+                <div class="media-body">
+                    <h4 class="media-heading">
+                        <a href="<%= TemplateTags.getPostLink(post.id) %>" class="pull-left"><%= post.title %></a>
+                        &nbsp;<small class="small"><%= TemplateTags.formatDate(post.date,'d/m/Y') %></small>
+                    </h4>
+                    <p><%= post.excerpt %></p>
+                </div>
             </div>
-		<% } %>
-            
-	<% }else{ %>
-		<div class='content-message'>No post found</div>
-	<% } %>
-        
-</div>
+        <% }); %>
+    </ul>
+		
+<% }else{ %>
+        <p>No post found!</p>
+<% } %>
